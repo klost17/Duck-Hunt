@@ -4,15 +4,11 @@ Artificial Intelligence capable of playing Duck-Hunt at high level
 # Compile
 g++ -std=c++11 *pp
 
-# Run
-# The agent can be run in two different modes:
-# 2. Server - act as the judge by sending predefined observations one at a time
-#    and asking the client to respond 
-# 3. Client - get observations from standard input and output actions to
-#    standard output (this is the default mode)
+# Run. The agent can be run in two different modes:
+1. Server - act as the judge by sending predefined observations one at a time and asking the client to respond 
+2. Client - get observations from standard input and output actions to standard output (this is the default mode)
 
-# The server and client can be run in separate terminals and communicate
-# through pipes. Create the pipes first (we recommend Cygwin for Windows users).
+# The server and client can be run in separate terminals and communicate through pipes. Create the pipes first (we recommend Cygwin for Windows users).
 mkfifo player2server server2player
 
 # Terminal 1:
@@ -21,7 +17,7 @@ mkfifo player2server server2player
 # Terminal 2:
 ./Skeleton verbose > player2server < server2player
 
-#Where "Skeleton" is the compiled skeleton program. 
+Where "Skeleton" is the compiled skeleton program. 
 
 # Or you may run both instances in the same terminal.
 ./Skeleton server < player2server | ./Skeleton verbose > player2server
